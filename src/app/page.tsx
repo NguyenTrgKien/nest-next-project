@@ -3,10 +3,12 @@ import { Button } from "antd";
 export default function Home() {
   return (
     <div>
-      Hello world
-      <div>
-        <Button type="primary">Hello</Button>
-      </div>
+      <Button
+        type="primary"
+        className=""
+      >
+        Home
+      </Button>
     </div>
   );
 }
