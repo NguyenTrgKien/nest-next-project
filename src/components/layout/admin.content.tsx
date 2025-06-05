@@ -9,7 +9,7 @@ function ContentAdmin({children}: {children: React.ReactNode}) {
             <div
                 style={{
                 padding: 24,
-                minHeight: 360,
+                minHeight: "100%",
                 background: "#ccc",
                 borderRadius: "8px",
                 }}

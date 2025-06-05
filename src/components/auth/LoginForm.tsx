@@ -2,16 +2,15 @@ import React from 'react';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import { Button, Checkbox, Flex, Form, Input } from 'antd';
 
-function LoginForm() {
+function LoginForm({message}: {message: string}) {
     
-
     return (  
         <>
             <Form.Item
-                name="username"
-                rules={[{ required: true, message: 'Please input your Username!' }]}
+                name="email"
+                rules={[{ required: true, message: 'Please input your Email!' }]}
             >
-                <Input prefix={<UserOutlined />} placeholder="Username" />
+                <Input prefix={<UserOutlined />} placeholder="Email" />
             </Form.Item>
             <Form.Item
                 name="password"
@@ -27,7 +26,16 @@ function LoginForm() {
                 <a href="">Forgot password</a>
                 </Flex>
             </Form.Item>
-
+            {
+                message && (
+                    <p 
+                        style={{
+                            color: 'red',
+                            paddingBottom: '5px'
+                        }}
+                    >{message}</p>
+                )
+            }
             <Form.Item>
                 <Button block type="primary" htmlType="submit">
                 Log in

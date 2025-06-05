@@ -1,4 +1,5 @@
 import { Button } from "antd";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -9,6 +10,11 @@ export default function Home() {
       >
         Home
       </Button>
+      <Link 
+        href={"/auth/login"}
+      >
+        Sign in
+      </Link>
     </div>
   );
 }

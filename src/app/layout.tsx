@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import "./globals.css";
 import {AntdRegistry} from '@ant-design/nextjs-registry';
+import Providers from "@/components/ProviderNextAuth";
 
 const roboto = Roboto({
   variable: "--font-Roboto",
@@ -22,7 +23,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${roboto.variable}`}>
         <AntdRegistry>
-          {children}
+          <Providers>
+            {children}
+          </Providers>
         </AntdRegistry>
       </body>
     </html>
