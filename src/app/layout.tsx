@@ -3,6 +3,9 @@ import { Roboto } from "next/font/google";
 import "./globals.css";
 import {AntdRegistry} from '@ant-design/nextjs-registry';
 import Providers from "@/components/ProviderNextAuth";
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const roboto = Roboto({
   variable: "--font-Roboto",
@@ -24,6 +27,11 @@ export default function RootLayout({
       <body className={`${roboto.variable}`}>
         <AntdRegistry>
           <Providers>
+            <ToastContainer
+              position="top-right"
+              autoClose={3000}
+              theme="colored"
+            />
             {children}
           </Providers>
         </AntdRegistry>

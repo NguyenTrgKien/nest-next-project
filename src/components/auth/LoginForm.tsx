@@ -1,6 +1,7 @@
 import React from 'react';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import { Button, Checkbox, Flex, Form, Input } from 'antd';
+import Link from 'next/link';
 
 function LoginForm({message}: {message: string}) {
     
@@ -40,7 +41,7 @@ function LoginForm({message}: {message: string}) {
                 <Button block type="primary" htmlType="submit">
                 Log in
                 </Button>
-                or <a href="">Register now!</a>
+                or <Link href={'/auth/register'}>Register now!</Link>
             </Form.Item>
         </>
     );

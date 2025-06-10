@@ -5,9 +5,13 @@ import HeaderAdmin from "@/components/layout/admin.header";
 import SidebarAdmin from "@/components/layout/admin.sidebar";
 import ContentAdmin from "@/components/layout/admin.content";
 import AdminContextProvider from "../library/admin.context";
+import { getServerSession } from "next-auth";
+import { authOptions } from "../api/auth/[...nextauth]/route";
 
 
-function LayoutAdmin({children}: {children: React.ReactNode}) {
+async function LayoutAdmin({children}: {children: React.ReactNode}) {
+    const session = await getServerSession(authOptions);
+    
     return (  
         <AdminContextProvider>
             <Layout
@@ -15,7 +19,7 @@ function LayoutAdmin({children}: {children: React.ReactNode}) {
             >
                 <SidebarAdmin/>
                 <Layout>
-                    <HeaderAdmin/>
+                    <HeaderAdmin session={session}/>
                     <ContentAdmin>
                         {children}
                     </ContentAdmin>
